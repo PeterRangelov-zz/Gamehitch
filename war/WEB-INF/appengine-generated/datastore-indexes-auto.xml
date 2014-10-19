@@ -1,0 +1,26 @@
+<!-- Indices written at Thu, 7 Aug 2014 19:41:54 EDT -->
+
+<datastore-indexes>
+
+    <!-- Used 22 times in query history -->
+    <datastore-index kind="Event" ancestor="false" source="auto">
+        <property name="school" direction="asc"/>
+        <property name="start" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 48034 times in query history -->
+    <datastore-index kind="Event" ancestor="false" source="auto">
+        <property name="conference" direction="asc"/>
+        <property name="start" direction="asc"/>
+        <property name="conference" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 4 times in query history -->
+    <datastore-index kind="User" ancestor="false" source="auto">
+        <property name="role" direction="asc"/>
+        <property name="school" direction="asc"/>
+        <property name="sportId" direction="asc"/>
+        <property name="emailAddress" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>

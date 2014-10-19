@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=UTF-8 name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/css/foundation.min.css>
+		<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css>
+		<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.css>
+		<link rel=stylesheet href=//code.jquery.com/ui/1.9.2/themes/cupertino/jquery-ui.css>
+		
+		<script src=//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/foundation.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/vendor/modernizr.js></script>
+		
+		<script src=//cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js></script>
+		<script src=/javascript/navbar.js></script>
+		<script src=/javascript/searchpage/searchpage.js></script>
+		<script src=/libraries/notify.min.js></script>
+		<script src=//code.jquery.com/ui/1.9.2/jquery-ui.min.js></script>		
+		
+		<script src=//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js></script>
+		
+		<script src=//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/gcal.js></script>
+		<script src=/libraries/accounting.min.js></script>
+		<script src=/libraries/autoNumeric.js></script>
+		
+		
+<!-- 		<script src=//cdn.jsdelivr.net/livejs/4/live.js></script> -->
+<title>Search</title>
+
+	</head>
+	<body>
+	
+	<div id=globalnav></div><br>
+		
+       		<div class=row-fluid>
+       		<div id=searchDiv class='small-5 medium-3 large-2 columns'>
+       			<h3>Search criteria</h3>
+       			<form id=searchForm>
+       				<fieldset>
+       					<legend>Location</legend>
+       					<label id=homeCheckboxLabel><input id=homeCheckbox type=checkbox checked=checked> </label>
+	       				<label><input id=awayCheckbox type=checkbox checked=checked> Away</label>
+	       				
+       					<label>Within miles
+       						<select id=distance> 
+			       				<option value=5>5</option>
+			       				<option value=10>10</option>
+			       				<option value=20>20</option>
+			       				<option value=40>40</option>
+			       				<option value=100>100</option>
+			       				<option value=150>150</option>
+			       				<option value=200>200</option>
+			       				<option value=300>300</option>
+			       				<option value=400>400</option>
+			       				<option value=500 selected=selected>500</option>
+	       					</select>
+	       				</label>
+       				</fieldset>
+       			
+	       			<fieldset>
+	       				<legend>Conferences</legend>
+	       			
+	       				<button id=checkAllConferences type=button class='button tiny'>Select all</button>
+						<button id=uncheckAllConferences type=button class='button tiny'>Unselect all</button>
+				
+						<span id=checkboxSpan>
+							<label><input class = conf type=checkbox checked=checked value='AEC'> #31 AEC</label>
+							<label><input class = conf type=checkbox checked=checked value=ACC> #6 ACC</label>
+							<label><input class = conf type=checkbox checked=checked value='A 10'> #9 A 10</label>
+							<label><input class = conf type=checkbox checked=checked value='Big East'> #7 Big East</label>
+							<label><input class = conf type=checkbox checked=checked value='Big Sky'> #14 Big Sky</label>
+							<label><input class = conf type=checkbox checked=checked value='Big South'> #26 Big South</label>
+							<label><input class = conf type=checkbox checked=checked value='Big Ten'> #3 Big Ten</label>
+							<label><input class = conf type=checkbox checked=checked value='Big 12'> #4 Big 12</label>
+							<label><input class = conf type=checkbox checked=checked value='Big West'> #17 Big West</label>
+							<label><input class = conf type=checkbox checked=checked value='CAA'> #13 CAA</label>
+							<label><input class = conf type=checkbox checked=checked value='C-USA'> #10 C-USA</label>
+							<label><input class = conf type=checkbox checked=checked value='Ivy'> #15 Ivy</label>
+							<label><input class = conf type=checkbox checked=checked value='MAAC'> #16 MAAC</label>
+							<label><input class = conf type=checkbox checked=checked value='MAC'> #12 MAC</label>
+							<label><input class = conf type=checkbox checked=checked value='MEAC'> #23 MEAC</label>
+							<label><input class = conf type=checkbox checked=checked value='MVC'> #19 MVC</label>
+							<label><input class = conf type=checkbox checked=checked value='NEC'> #28 NEC</label>
+							<label><input class = conf type=checkbox checked=checked value='OVC'> #30 OVC</label>
+							<label><input class = conf type=checkbox checked=checked value='Pac-12'> #5 Pac-12</label>
+							<label><input class = conf type=checkbox checked=checked value='Patriot'> #11 Patriot</label>
+							<label><input class = conf type=checkbox checked=checked value='SEC'> #1 SEC</label>
+							<label><input class = conf type=checkbox checked=checked value='Southern'> #25 Southern</label>
+							<label><input class = conf type=checkbox checked=checked value='Southland'> #27 Southland</label>
+							<label><input class = conf type=checkbox checked=checked value='SWAC'> #32 SWAC</label>
+							<label><input class = conf type=checkbox checked=checked value='Sun Belt'> #24 Sun Belt</label>
+							<label><input class = conf type=checkbox checked=checked value='WCC'> #8 WCC</label>
+							<label><input class = conf type=checkbox checked=checked value='WAC'> #29 WAC</label>
+							<label><input class = conf type=checkbox checked=checked value='Indep.'> #33 Indep.</label>
+							<label><input class = conf type=checkbox checked=checked value='MW'> #28 MW</label>
+							<label><input class = conf type=checkbox checked=checked value='Horizon'> #22 Horizon</label>
+							<label><input class = conf type=checkbox checked=checked value='A-Sun'> #21 A-Sun</label>
+							<label><input class = conf type=checkbox checked=checked value='Summit'> #20 Summit</label>
+							<label><input class = conf type=checkbox checked=checked value='AAC'> #6 AAC</label>
+						</span>
+	       			
+	       			</fieldset>
+				 
+				
+				</form>
+       			
+       		</div>
+       		</div>
+       		
+       		<div id=calendarDiv class='small-7 medium-9 large-10 columns'>
+       			<div id=loading data-alert class="alert-box" hidden=true>
+				 <i class="fa fa-spinner fa-spin fa-lg"></i> Loading...
+				</div>
+       		</div>
+	        
+	        <div id=modal class="reveal-modal small" style="display:none" data-reveal>
+  				<h4>What conditions do you propose?</h4>
+  				<form>
+  				
+  				<div class='row'>
+					<div class="small-6 columns">
+						<label>Opponent
+						<input type=text id=modalOpponent disabled="disabled">
+						</label>
+						
+						<label>Location
+						<input type=text id=modalLocation disabled="disabled">
+						</label>
+						
+						<label>Date
+						<input type=text id=modalDate disabled="disabled">
+						</label>
+						
+						<label>Tickets
+						<input type=text id=tickets placeholder='Number of free tickets'>
+						</label>
+						<label>Cancellation penalty
+						<input type=text id=cancellation placeholder='Dollar amount'>
+						</label>
+						
+						
+					</div>
+  					<div class="small-6 columns">
+	  					<label>Who pays</label>
+						<input id=modalPayerThem type=radio name=payer checked=checked><label id=theypaylabel for=modalPayerThem>They pay me</label><br>
+						<input id=modalPayerMe type=radio name=payer><label id=theypaylabel for=modalPayerMe>I pay them</label><br>
+						<input id=modalPayerNobody type=radio name=payer><label id=theypaylabel for=modalPayerNobody>N/A</label><br>
+						<input id=dollarAmount type=text placeholder='Dollar amount'>
+					</div>
+					<div class='small-12 columns'>
+						<label>Comments
+							<textarea id=comments rows=4 cols=100%></textarea>
+						</label>
+					</div>
+  				</div>
+  				
+  				<button id=negotiate type=button class="button expand">Propose conditions</button>
+  				
+				</form>
+			  	<a id=close_modal class="close-reveal-modal">&#215;</a>
+			</div>
+
+	</body>
+	
+</html>

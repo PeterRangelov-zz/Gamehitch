@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+		 <meta charset=UTF-8 name=viewport content="width=device-width, initial-scale=1.0">
+		 <link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/css/foundation.min.css>
+		 
+		<script src=//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js></script>
+		<script src=/javascript/adportalnav.js></script>
+		<script src=//cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js></script>
+		<script src=/libraries/notify.min.js></script>
+		<link rel=stylesheet href=//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js></script>
+		<script src=/javascript/achpage/ach.js></script>
+		
+		<script type="text/javascript" src="https://js.balancedpayments.com/1.1/balanced.js"></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/foundation.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/vendor/modernizr.js></script>
+		
+			<!-- <script src=//cdn.jsdelivr.net/livejs/4/live.js></script> -->
+		<title>ACH</title>
+		
+		
+</head>
+<body>
+	<div id=adportalnav></div>
+		
+					
+			
+			
+	<div class='row'>
+		
+		<div class='small-12 medium-6 large-4 columns' id='enterACH' hidden=true>
+		<h4>Enter ACH information</h4>
+		<form role="form">
+		  <div>
+		    <label>Account Holder's Name
+		    	<input type=text id=ba-name autocomplete=off placeholder="ex: John Doe" />
+		    </label>
+		  </div>
+		  <div>
+		    <label>Routing Number
+		    	<input type=text id=ba-routing autocomplete=off placeholder="ex: 322271627" />
+		    </label>
+		  </div>
+		  <div>
+		    <label>Account Number
+		    	<input type="text" id="ba-number" autocomplete="off" placeholder="ex: 9900000000" />
+		    </label>
+		  </div>
+		  <button id="ba-submit" type=button>Submit</button>
+		  <span id=ba-submit_spinner hidden=true><i class="fa fa-spinner fa-spin fa-lg"></i> Please wait...</span>
+		  
+		  <br><br>
+		  <img src=https://s3.amazonaws.com/justice.web/docs/check_image.png>
+		</form>
+		</div>
+		
+		<div class='small-12 medium-6 columns' id='currentACH' hidden=true>
+			<h4>Your ACH on file</h4>
+			<h5 id=statusH5>Verification status: </h5>
+			<table>
+				<tr>
+					<td>Bank</td>
+					<td id=banknameTD></td>
+				</tr>
+				<tr>
+					<td>Account name</td>
+					<td id=accountnameTD></td>
+				</tr>
+				<tr>
+					<td>Account type</td>
+					<td id=accounttypeTD></td>
+				</tr>
+				<tr>
+					<td>Routing number</td>
+					<td id=routingnumberTD></td>
+				</tr>
+				<tr>
+					<td>Account number</td>
+					<td id=accountnumberTD></td>
+				</tr>
+			</table>
+			
+		
+		
+		</div>
+		
+		<div class='small-12 medium-6 columns' id='verifyACH' hidden=true>
+			<h4>What's next?</h4>
+			<h5>You must verify your account. How?</h5>
+			
+			<p>We'll deposit two amounts (less than $1 each) to your account within 5 business days. Come back and enter them. See you soon!</p>
+			
+			<form>
+				<label>Deposit 1: $0.
+					<input maxlength=2 id=deposit1 placeholder=XX>
+				</label>
+				<label>Deposit 2: $0.
+					<input maxlength=2 id=deposit2 placeholder=XX>
+				</label>
+			</form>
+			<br>
+			
+			<button id=verify type=button>Verify</button>
+			<span id=verify_spinner hidden=true><i class="fa fa-spinner fa-spin fa-lg"></i> Please wait...</span>
+		</div>
+		
+		<div class='col-md-6' id='verifiedNotification' hidden=true>
+			<h4>Success!</h4>
+			<p>Please allow 1-2 days for changes to take effect</p>
+		</div>
+		
+		
+				
+				
+				
+	</div>
+</body>
+	
+	
+	
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=UTF-8 name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/css/foundation.min.css>
+		<script src=//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/foundation.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/vendor/modernizr.js></script>
+		<script src=/javascript/navbar.js></script>
+		<script src=/javascript/negotiatepage/negotiatedetails.js></script>
+		<script src=//cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js></script>
+<!-- 		<script src=/libraries/notify.min.js></script> -->
+
+<!-- 		<link rel=stylesheet href=//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css> -->
+		<script src=/libraries/accounting.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js></script>
+		<script src=/libraries/autoNumeric.js></script>
+		
+<!-- 			<script src=//cdn.jsdelivr.net/livejs/4/live.js></script> -->
+		<title>Negotiation</title>
+		
+	</head>
+	<body>
+	<div id=globalnav></div><br><br>
+	
+	
+	<div class="row">
+	<div class='small-12 columns'>
+		<ul class="button-group">
+			<li><button id=sign class='button'>Sign</button></li>
+			<li><button id=edit class='button'>Edit</button></li>
+			<li><button id=delete class='button'>Delete</button></li>
+		</ul>
+		
+  	</div>
+	<div class="small-12 columns">
+		<h1 id=no_edit_title>UMBC vs American</h1>
+	</div>
+	
+</div>
+
+
+<div class='row'>
+	
+
+  <div class="small-12 medium-6 large-3 columns">
+  	<h3>When & where</h3>
+	<p id=whenwhere></p>
+ 
+  </div>
+  <div class="small-12 medium-6 large-4 columns">
+  	<h3>Payment</h3>
+	<p id=payment></p>
+	<p id=total hidden=true>Total bill (including a 3% Gamehitch fee): </p>
+  </div>
+  <div class="small-12 medium-6 large-2 columns">
+  	<h3>Tickets</h3>
+	<p id=tickets></p>
+  </div>
+  <div class="small-12 medium-6 large-2 columns">
+  	<h3>Cancellation</h3>
+	<p id=cancellation></p>
+  </div>
+  <div class="small-12 medium-12 large-12 columns">
+  	<h3>Other comments</h3>
+	<p id=comments></p>
+  </div>
+</div>
+	
+	
+		<script>$(document).foundation();</script>
+	</body>
+
+</html>

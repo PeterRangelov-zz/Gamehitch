@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sign in</title>
+		<meta charset=utf-8 http-equiv="X-UA-Compatible" content="IE=edge">
+		<script src=//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js></script>
+		<link rel=stylesheet href=//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css>
+		<script src=//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js></script>
+		<script src=/javascript/navbar.js></script>
+		<script src=/javascript/registrationpage/registeruser.js></script>
+		<script src=/libraries/notify.min.js></script>
+			<link rel=stylesheet href=//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css>
+			<script src=//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js></script>
+		
+<!-- 		<script src=//cdn.jsdelivr.net/livejs/4/live.js></script> -->
+				<script src=/libraries/parsley.min.js></script>		
+		
+	</head>
+	<body>
+	
+	<div id=registerNotification class=container hidden=true>
+			<h4 id=h4Notification><i class="fa fa-check"></i> Check your email for an activation link.</h4>
+			<h5 id=h5Notification>To protect your security, the link expires in 2 days.</h5>
+		</div>
+	<div id=container class='container'>
+		
+					<h4 hidden=true id=h4Notification><i class="fa fa-check"></i> Check your email for a password reset link.</h4>
+					<h5 hidden=true id=h5Notification>To protect your security, the link expires in 2 days.</h5>
+					
+					<form class='col-md-4' id=newUserForm novalidate parsley-validate parsley-error-container="#errorContainer" parsley-validation-minlength=0 parsley-trigger=keyup>
+						<h2>Sign up</h2>
+						<h3>And let's get started :)</h3>
+					
+					
+						<input id=emailTextbox placeholder='Your school email address (john.doe@umbc.edu)' class='form-control input-sm' parsley-type=email parsley-type-email-message='Invalid email address'>
+						<input id=passwordTextbox type=password placeholder='Password' class='form-control input-sm' parsley-minlength='6' parsley-minlength-message='Password must be at least 6 characters'>
+						<input id=passwordTextboxRetype type=password placeholder='Retype password' class='form-control input-sm' parsley-required=true parsley-equalto='#passwordTextbox' parsley-equalto-message='Passwords do not match'>
+						
+							
+						<button id=newUserFormButton type=button class='btn btn-primary btn-large' disabled=disabled>Register</button>
+<!-- 						<i hidden=true id=newUserSpinnyThingie class='fa fa-refresh fa-spin fa-2x text-success'></i> -->
+					</form>	
+			
+			
+			<div class='col-md-3' id=errorContainer><br><br><br><br><br>
+			</div>
+			
+			
+				<form id=loginForm class='col-md-3'>
+					<h4>Sign in</h4>
+					<h5>If you already have an account</h5>
+					<input id=loginFormEmail placeholder='Email address' class='form-control input-sm'>
+					<input type=password id=loginFormPassword placeholder='Password' class='form-control input-sm'>
+					<button id=loginFormButton type=button class='btn btn-primary btn-large'>Log in</button>
+					<label id=passwordResetLabel style='font-weight:normal;cursor:pointer'>Need a password reset?</label>
+				</form>
+				
+				<form id=passwordResetForm hidden=true class='col-md-3'>
+					<h4>Reset password</h4>
+					A password reset link will be emailed to:
+					<input id=passwordResetFormEmailAddress placeholder='Your email address' class='form-control input-sm'>
+					<button id=passwordResetFormButton type=button class='btn btn-primary btn-large'>Send</button>
+					<label id=loginLabel style='font-weight:normal;cursor:pointer'>Nevermind, let me sign in</label>
+				</form>
+			
+			
+
+
+</div>
+    
+    
+	</body>
+	
+	<style>
+	* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+</style>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=UTF-8 name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/css/foundation.min.css>
+		<script src=//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/foundation.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/vendor/modernizr.js></script>
+		<script src=/javascript/navbar.js></script>
+		<script src=/javascript/negotiatepage/edit_negotiatedetails.js></script>
+		<script src=//cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js></script>
+<!-- 		<script src=/libraries/notify.min.js></script> -->
+
+<!-- 		<link rel=stylesheet href=//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css> -->
+		<script src=/libraries/accounting.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js></script>
+		<script src=/libraries/autoNumeric.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.1/compressed/picker.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.1/compressed/picker.date.js></script>
+		<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.1/compressed/themes/classic.css>
+		<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.1/compressed/themes/classic.date.css>
+		
+			<script src=//cdn.jsdelivr.net/livejs/4/live.js></script>
+		<title>Negotiation</title>
+		
+	</head>
+	<body>
+	<div id=globalnav></div><br><br>
+	
+	
+	
+
+<div class="row">
+	<div class='small-12 columns'>
+		<ul class="button-group">
+			<li><button id=propose class='button'>Send</button></li>
+			<li><button id=discard class='button'>Discard changes</button></li>
+		</ul>
+		
+  	</div>
+	<div class="small-12 columns">
+		<h1 id=title></h1>
+	</div>
+	
+</div>
+<div class="row">
+	<div class='small-12 medium-4 large-3 columns'>
+		<fieldset>
+	  		<legend>When & where</legend>
+			<label>Game day
+				<input type=text class=datepicker data-value id=date>
+			</label>
+			<label>Location</label>
+			<input type="radio" name="location" id="location1" checked=checked><label for="location1"></label><br>
+      		<input type="radio" name="location" id="location2"><label for="location2"></label>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Miscellaneous</legend>
+	  		<label>Cancellation
+			<input type=text id=cancellation>
+			</label>
+			<label>Tickets
+			<input type=text id=tickets>
+		</label>
+		</fieldset>
+		
+  	</div>
+  	
+	
+  	<div class='small-12 medium-4 large-3 columns'>
+  		<fieldset>
+  		<legend>Payment</legend>
+	  		<label>Paying institution</label>
+			<input type="radio" name="payer" id="payer1"><label for="payer1"></label><br>
+	      	<input type="radio" name="payer" id="payer2"><label for="payer2"></label><br>
+	      	<input type="radio" name="payer" value="nobody" id="payer_na"><label for="payer_na">N/A</label>
+	      	<div id=amountDiv>
+				<label>Amount
+					<input type=text id=amount>
+				</label>
+				<label id=total_title hidden=true>Total bill (including a 3% Gamehitch fee): </label>
+				<label id=total hidden=true></label>
+			</div>
+		</fieldset>
+  	</div>
+  	
+  	<div class='small-12 columns'>
+		<label>Comments
+			<textarea id=comments cols=100% rows=8></textarea>
+		</label>
+  	</div>
+  	
+	
+</div>
+
+
+	
+		<script>$(document).foundation();</script>
+	</body>
+
+</html>

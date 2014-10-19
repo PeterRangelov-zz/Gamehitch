@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<meta charset=UTF-8 name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/css/foundation.min.css>
+		<script src=//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/foundation.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/vendor/modernizr.js></script>
+		<script src=/javascript/navbar.js></script>
+		<script src=//cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js></script>
+		
+	
+		
+		
+<!-- 	<script src=//cdn.jsdelivr.net/livejs/4/live.js></script> -->
+		
+		
+		<title>Your Negotiations</title>
+	</head>
+	<body>
+	<div id=globalnav></div>
+	<div class=row>
+		<div class='small-12 columns'>
+			<h4 id=ongoing>Awaiting your response</h4>
+		</div>
+		
+	</div>
+		
+		
+	</body>
+	
+	<script>
+	
+	$.getJSON('//'+location.host+'/rest/negotiation/mine', function( data ) {
+	    console.log(data);
+	    if (!data){
+			$('#ongoing').after("<p>No negotiations are awaiting your response, check back later.</p>");
+		}
+		else if (data.negotiation.length){
+		    for (var i=0; i<data.negotiation.length; i++){
+		    	$('#ongoing').after("<a href=/negotiation/"+data.negotiation[i].id+">"+data.negotiation[i].school1+" vs "+data.negotiation[i].school2+"</a><br>");
+		    }
+		}
+		else {
+		    $('#ongoing').after("<a href=/negotiation/"+data.negotiation.id+">"+data.negotiation.school1+" vs "+data.negotiation.school2+"</a><br>");	
+		   }
+	});
+	</script>
+	
+</html>

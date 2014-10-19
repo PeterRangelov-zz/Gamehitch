@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/css/foundation.min.css>
+		<script src=//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/foundation.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/vendor/modernizr.js></script>
+			
+		<link rel=stylesheet href=//code.jquery.com/ui/1.9.2/themes/cupertino/jquery-ui.css>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js></script>
+		
+		
+		<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.0.2/fullcalendar.css>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.0.2/fullcalendar.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.0.2/gcal.js></script>
+		
+		
+		<script>
+$(document).ready(function(){
+
+	$('#calendarDiv').fullCalendar({
+	        theme: true,
+	        weekMode: 'variable',
+	        allDayDefault: true,
+	        header: {
+	            left: 'prev,next today',
+	            center: 'title',
+	            right: 'month, basicWeek, basicDay'
+	        },
+	        events: {
+	        	url: '/rest/event',
+	        	error: function(){
+	        		console.log('error');
+	        	}
+	        }
+        
+    });
+});
+</script>
+
+
+		
+<!-- 		<script src=//cdn.jsdelivr.net/livejs/4/live.js></script> -->
+
+	</head>
+	<body>
+		
+<div class=row>
+	<div id=calendarDiv class='small-7 medium-9 large-10 columns'>
+	</div>
+</div>
+
+
+
+	</body>
+
+	
+</html>

@@ -1,0 +1,215 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee/javaee_5.xsd"
+	      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	      xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	      http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	      version="2.5">
+	      
+	<servlet>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>com.gamehitch.controllers</param-value>
+		</init-param>
+		<load-on-startup>11</load-on-startup>
+<!-- 		<init-param>  -->
+<!-- 		    <param-name>com.sun.jersey.config.feature.DisableWADL</param-name>  -->
+<!-- 		    <param-value>true</param-value>  -->
+<!-- 		  </init-param>  -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<url-pattern>/resources/*</url-pattern>
+		<url-pattern>/rest/*</url-pattern>
+		<url-pattern>/crud/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Startup</servlet-name>
+		<servlet-class>com.gamehitch.servlets.StartupServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Startup</servlet-name>
+		<url-pattern>/startup</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Fixture</servlet-name>
+		<servlet-class>com.gamehitch.servlets.FixtureServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Fixture</servlet-name>
+		<url-pattern>/fixture</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Negotiation</servlet-name>
+		<servlet-class>com.gamehitch.servlets.pages.NegotiationPageServlet</servlet-class>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Negotiation</servlet-name>
+		<url-pattern>/negotiation/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EditNegotiation</servlet-name>
+		<servlet-class>com.gamehitch.servlets.pages.EditNegotiationPageServlet</servlet-class>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditNegotiation</servlet-name>
+		<url-pattern>/negotiation/edit/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AccountPage</servlet-name>
+		<servlet-class>com.gamehitch.servlets.pages.AccountPageServlet</servlet-class>
+		<load-on-startup>4</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AccountPage</servlet-name>
+		<url-pattern>/account</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>NegotiationsPage</servlet-name>
+		<servlet-class>com.gamehitch.servlets.pages.NegotiationsPageServlet</servlet-class>
+		<load-on-startup>5</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NegotiationsPage</servlet-name>
+		<url-pattern>/negotiations</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SearchPage</servlet-name>
+		<servlet-class>com.gamehitch.servlets.pages.SearchPageServlet</servlet-class>
+		<load-on-startup>6</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchPage</servlet-name>
+		<url-pattern>/search</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>RegisterPage</servlet-name>
+		<servlet-class>com.gamehitch.servlets.pages.RegisterPageServlet</servlet-class>
+		<load-on-startup>7</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterPage</servlet-name>
+		<url-pattern>/register</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AvailableDatesPage</servlet-name>
+		<servlet-class>com.gamehitch.servlets.pages.AvailableDatesPageServlet</servlet-class>
+		<load-on-startup>8</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AvailableDatesPage</servlet-name>
+		<url-pattern>/availabledates</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SigninPage</servlet-name>
+		<servlet-class>com.gamehitch.servlets.pages.SigninPageServlet</servlet-class>
+		<load-on-startup>9</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SigninPage</servlet-name>
+		<url-pattern>/signin</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ACHPage</servlet-name>
+		<servlet-class>com.gamehitch.servlets.pages.ACHPageServlet</servlet-class>
+		<load-on-startup>10</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ACHPage</servlet-name>
+		<url-pattern>/ach</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ADPortalPage</servlet-name>
+		<servlet-class>com.gamehitch.servlets.pages.ADPortalPageServlet</servlet-class>
+		<load-on-startup>12</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ADPortalPage</servlet-name>
+		<url-pattern>/adportal</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ADSignPage</servlet-name>
+		<servlet-class>com.gamehitch.servlets.pages.ADSignPageServlet</servlet-class>
+		<load-on-startup>12</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ADSignPage</servlet-name>
+		<url-pattern>/adportal/sign/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+
+	
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/htmlpages/toplevel/404page.html</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/htmlpages/toplevel/500page.html</location>
+	</error-page>
+	
+	
+
+
+	<filter>
+		<filter-name>ObjectifyFilter</filter-name>
+		<filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ObjectifyFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+	
+	<filter>
+	   <filter-name>LoginFilter</filter-name>
+	   <filter-class>com.gamehitch.filters.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	   <filter-name>LoginFilter</filter-name>
+	   <url-pattern>/search</url-pattern>
+	   <url-pattern>/negotiations</url-pattern>
+	   <url-pattern>/negotiation/*</url-pattern>
+	   <url-pattern>/account</url-pattern>
+	   <url-pattern>/availabledates</url-pattern>
+	   <url-pattern>/ach</url-pattern>
+	   <url-pattern>/adportal</url-pattern>
+	   <url-pattern>/adportal/sign/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+	   <filter-name>ResetFilter</filter-name>
+	   <filter-class>com.gamehitch.filters.ResetFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	   <filter-name>ResetFilter</filter-name>
+	   <url-pattern>/rest/reset/*</url-pattern>
+	</filter-mapping>
+	
+	
+	
+	
+	
+	
+	
+	
+</web-app>

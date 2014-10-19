@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=UTF-8>
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/css/foundation.min.css>
+		<script src=//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/foundation.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/js/vendor/modernizr.js></script>
+		<script src=/javascript/navbar.js></script>
+		<script src=/libraries/formance.min.js></script>
+		<script src=/libraries/notify.min.js></script>
+		<script src=//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js></script>
+		<script src=/javascript/editprofilepage/EditInfo.js></script>
+		<script src=/libraries/parsley.min.js></script>
+		<script src=//cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js></script>
+		
+<!-- 			<script src=//cdn.jsdelivr.net/livejs/4/live.js></script> -->
+		<title>Edit Account</title>
+		
+		
+	</head>
+	<body>
+	<div id=globalnav></div><br><br><br><br>
+	
+	<div class='row'>
+		<div class='small-12 medium-6 large-4 columns'>
+	  		<form>
+		  		<p id=school></p>
+				<p id=sport></p>
+				<p id=role></p>
+				<label>First name <input id=firstName type=text></label>
+				<label>Last name <input id=lastName type=text></label>
+				<label>Email address (the one you use to log in) <input id=emailAddress type=text></label>
+				<label>Phone number<input id=phoneNumber type=text></label>
+				
+				
+	
+				<button id=updateButton type=button class='button'>Save changes</button>
+			</form>
+		</div>
+  	</div>
+		
+		
+		
+	
+		<script>$(document).foundation();</script>
+		
+	</body>
+	
+	<script>
+	$(document).foundation();
+	$.getJSON('//'+location.host+'/rest/accountpage/getinfo', function(data){
+			$('#school').text(data.school);
+	    	$('#sport').text(data.sport);
+	    	$('#role').text(data.role);
+	    	$('#firstName').val(data.firstName);
+	        $('#lastName').val(data.lastName);
+	        $('#phoneNumber').val(data.phoneNumber);
+	        $('#emailAddress').val(data.emailAddress);
+		});
+	</script>
+	
+</html>
